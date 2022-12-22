@@ -25,9 +25,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	UPROPERTY(EditInstanceOnly,Category="Basic Config");
+	UPROPERTY(VisibleAnywhere);
 	USkeletalMesh* SkeletalMesh;
 private:
 	void Construct();
-	void SetModel();
+	void CreateModel();
 };

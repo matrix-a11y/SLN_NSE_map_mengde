@@ -3,6 +3,9 @@
 
 #include "MainCharacter.h"
 
+#include "../../../../../../../../Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h"
+#include "Components/CapsuleComponent.h"
+
 // Sets default values
 AMainCharacter::AMainCharacter()
 {
@@ -11,16 +14,17 @@ AMainCharacter::AMainCharacter()
 	/*初始化&加载模型*/
 	this -> Construct();
 	/*设置模型*/
-	this -> SetModel();
+	this -> CreateModel();
 }
 void AMainCharacter::Construct()
 {
 	SkeletalMesh = LoadObject<USkeletalMesh>(NULL,TEXT("SkeletalMesh'/Game/Character/Nahida/Nahida.Nahida'"));
 }
-void AMainCharacter::SetModel()
+void AMainCharacter::CreateModel()
 {
-	GetMesh() -> SetRelativeRotation(FRotator(0,-90,0))
-	
+	GetMesh() -> SetRelativeRotation(FRotator(0,-90,0));
+	GetMesh() -> SetRelativeLocation(FVector(0,0,-100));
+	GetCapsuleComponent() -> InitCapsuleSize(42,100);
 }
 
 // Called when the game starts or when spawned
