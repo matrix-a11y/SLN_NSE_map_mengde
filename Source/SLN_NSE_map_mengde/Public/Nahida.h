@@ -26,8 +26,14 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(EditInstanceOnly,Category="Basic Config");
+	USkeletalMesh*SkeletalMesh;
+private:
+	
 };
 
-
+/*《一个亿合同》
+ * 《两个亿合同》
+ */
 
 
