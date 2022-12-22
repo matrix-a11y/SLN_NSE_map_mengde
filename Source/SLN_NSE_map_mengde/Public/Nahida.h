@@ -27,9 +27,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UPROPERTY(EditInstanceOnly,Category="Basic Config");
-	USkeletalMesh*SkeletalMesh;
+	USkeletalMesh* SkeletalMesh;
 private:
-	
+	void Construct();
+	void Setting_up_the_model();
 };
 
 /*《一个亿合同》
